@@ -34,7 +34,7 @@
 
       <section id="main">
         {{outlet}}
-        <input type="checkbox" id="toggle-all">
+        {{input type="checkbox" id="toggle-all" checked=allAreDone}}
       </section>
 
       <footer id="footer">
@@ -53,9 +53,12 @@
           </li>
         </ul>
 
-        <button id="clear-completed">
-          Clear completed (1)
+      {{#if hasCompleted}}
+        <button id="clear-completed" {{action "clearCompleted"}}>
+          Clear completed ({{completed}})
         </button>
+      {{/if}}
+
       </footer>
     </section>
 
@@ -70,6 +73,7 @@
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember-1.8.0.js"></script>
   <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/localstorage_adapter.js"></script>
   
   <script src="js/application.js"></script>
   <script src="js/router.js"></script>
