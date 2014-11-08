@@ -16,7 +16,7 @@ Todos.TodosRoute = Ember.Route.extend({
 /* TodosIndexRoute*/
 Todos.TodosIndexRoute = Ember.Route.extend({
   model: function() {
-  	/* 调用todos路由的model*/
+  	/* 调用todos路由(Todos.TodosRoute)的model*/
     return this.modelFor('todos');
   }
 });
